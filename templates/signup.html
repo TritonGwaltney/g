@@ -3,7 +3,7 @@
 {%block body%}
 <div class="content">
     <h1 style="text-align: center; font-size: 54px;">Rank-It!</h1>
-    <h2 style="text-align: center;">Login</h2>
+    <h2 style="text-align: center;">Sign Up</h2>
     <table style="margin-left: auto; margin-right: auto; text-align: center; width: 300px; border: 1px solid black; border-collapse: collapse;">
         
         
@@ -12,7 +12,7 @@
     <div class ='loginForm'>
         
         
-        <form action ='/' method = 'POST' style="margin-left: auto; margin-right: auto; text-align: center;" action="/" method="POST">
+        <form action="/signup" method="POST" style="margin-left: auto; margin-right: auto; text-align: center;">
             <label for="username" style="align-items: center;">Enter Username:</label>
             <input type="text" name="username" placeholder="Enter username" id="username" required>
             
@@ -23,14 +23,10 @@
         
             <label for="password">Enter Password: </label>
             <input type="password" name="password" placeholder="Enter password" id="password" required>
-            <input type="submit" value="Login">
+            <input type="submit" value="Sign Up">
         </form>
     </div>
-
-    <h4 style="text-align: center;">Don't have an account? <a href="/signup">Sign up here</a></h4>
-
-
+    <h4 style="text-align: center;">Go Back to <a href="/index">Login</a></h4>
 </div> 
 {%endblock%}  
     
-

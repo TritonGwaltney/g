@@ -1,4 +1,20 @@
 body{
     margin: 0;
-    font-family: comic sans ms;
+    font-family: playfair display;
+}
+.loginForm form {
+    display: grid;
+    grid-template-columns: 140px 200px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.loginForm label {
+    text-align: right;
+}
+
+.loginForm input[type="submit"] {
+    grid-column: 2;
+    justify-self: start;
 }
