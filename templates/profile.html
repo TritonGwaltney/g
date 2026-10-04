@@ -2,15 +2,46 @@
 
 {%block body%}
 <div class="content">
-    <h1 style="text-align: center;">{{ username }}'s Profile</h1>
+    <h1 style="text-align: center; font-family: plainview display;">Your <br> Ratings</h1>
+    <h4 style="color:rgb(161, 0, 32); text-align: center;font-family: Arial, sans-serif;"> <a href="/index">Exit</a></h4>
 
-     <h4 style="text-align: center;">Go Back to <a href="/index">Login</a></h4>
+    <div class ='addRating'>
+        <a style = "align-items: center; margin-left: auto; margin-right: auto;" href="{{ url_for('addRating', username=username) }}">Add Rating</a>
+            
+        </a>  
+    </div>      
+
+
+
+
     <br>
-    <div class ='form'>
+    <form>
+
+
+    </form>
+    <div class ='Table'>
+        <table style="margin-left: auto; margin-right: auto; text-align: center; width: 500px; border: 1px solid black; border-collapse: collapse;">
+            <tr>
+                <th style="border: 1px solid black;width: 400px;">Name</th>
+                <th style="border: 1px solid black;width: 100px;">Rating</th>
+            </tr>
+            {% for data in media %}
+            <tr>
+                
+                <td style="text-align: left; border: 1px solid black;width: 400px;">{{ data.name }}</td>
+                <td style="border: 1px solid black;width: 100px;">{{ data.rating }}</td>
+            </tr>
+            {% endfor %}
         
+            
+        </table>
         
+
+            
     </div>
+    
 </div> 
+
 {%endblock%}  
     
 

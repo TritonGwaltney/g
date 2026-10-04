@@ -18,3 +18,11 @@ body{
     grid-column: 2;
     justify-self: start;
 }
+
+.addRating{
+    display: grid;
+    
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
