@@ -2,14 +2,14 @@
 
 {%block body%}
 <div class="content">
-    <h1 style="text-align: center; font-family: plainview display;">Add New Rating</h1>
+    <h1 style="text-align: center; font-family: plainview display;">Edit Rating</h1>
     <h4 style="text-align: center;font-family: Arial, sans-serif;"> <a href="/profile">Exit</a></h4>
 
     <div class ='addRating'>
         <form
-            action="/addRating" method="POST" style="margin-left: auto; margin-right: auto; text-align: center;">
+            action="{{ url_for('editRating', username=username, rating_id=rating.id) }}" method="POST" style="margin-left: auto; margin-right: auto; text-align: center;">
             <label for="name" style="align-items: center;">Enter Name:</label>
-            <input type="text" name="name" placeholder="Enter name" id="name" required>
+            <input type="text" name="name" value="{{ rating.name }}" id="name" required>
             
         
             <br><br>
@@ -17,7 +17,7 @@
     
         
             <label for="rating"style="margin-left: auto; margin-right: auto;align-items: center;">Enter Rating: </label>
-            <input type="number" step="0.1" id="rating" placeholder="0.0-10.0" name="rating" min="0" max="10" required>
+            <input type="number" step="0.1" id="rating" value="{{ rating.rating }}" name="rating" min="0" max="10" required>
             <br><br>
             <input type="hidden" name="username" value="{{ username }}">
             <input type="submit" value="Update Rating">
@@ -28,5 +28,3 @@
 </div> 
 
 {%endblock%}  
-    
-

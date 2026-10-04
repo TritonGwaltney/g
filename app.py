@@ -104,6 +104,23 @@ def back():
     
     return render_template('index.html')
 
+@app.route('/delete/<username>/<int:rating_id>', methods=['POST','GET'])
+def delete(username,rating_id):
+    rating = Rating.query.get_or_404(rating_id)
+    db.session.delete(rating)
+    db.session.commit()
+    return redirect(url_for('profile', username=username))
+
+@app.route('/edit/<username>/<int:rating_id>', methods=['POST', 'GET'])
+def editRating(username, rating_id):
+    rating = Rating.query.get_or_404(rating_id)
+    if request.method == 'POST':
+        rating.name = request.form['name']
+        rating.rating = request.form['rating']
+        db.session.commit()
+        return redirect(url_for('profile', username=username))
+    return render_template('editRating.html', username=username, rating=rating)
+
 if __name__ == '__main__':
     app.run(debug=True)
 
